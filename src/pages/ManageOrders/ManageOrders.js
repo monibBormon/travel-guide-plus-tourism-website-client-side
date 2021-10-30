@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 const ManageOrders = () => {
     const [tours, setTours] = useState([])
+    const [isDeleted, setIsDeleted] = useState(null)
 
     useEffect(() => {
         fetch(`http://localhost:5000/manageOrders`)
             .then(res => res.json())
             .then(data => setTours(data))
-    }, [])
+    }, [isDeleted])
     // handle tour approve
     const handleTourApprove = id => {
         fetch(`http://localhost:5000/update/${id}`, {
@@ -20,6 +21,25 @@ const ManageOrders = () => {
                     window.location.reload(true)
                 }
             })
+    }
+    //  handle delete booking
+    const handleDeleteBooking = id => {
+        const confirmation = window.confirm('Are you sure, you want to cancel booking?')
+        if (confirmation) {
+            fetch(`http://localhost:5000/delete/${id}`, {
+                method: 'DELETE',
+                headers: { 'content-type': 'application/json' }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        setIsDeleted(true)
+                        alert('Successfully Deleted')
+                    } else {
+                        setIsDeleted(false)
+                    }
+                })
+        }
     }
     return (
         <div>
@@ -58,7 +78,7 @@ const ManageOrders = () => {
                                     <button onClick={() => handleTourApprove(tour._id)} className='border-2 border-green-400 md:px-5 md:py-2 md:font-semibold font-medium text-green-400 text-xs md:text-sm'>Approve Booking</button>
                                 </td>
                                 <td className='md:p-3 p-1'>
-                                    <button className='border-2 border-green-400 md:px-5 md:py-2 md:font-semibold font-medium text-green-400 text-xs md:text-sm'>Cancel Booking</button>
+                                    <button onClick={() => handleDeleteBooking(tour._id)} className='border-2 border-green-400 md:px-5 md:py-2 md:font-semibold font-medium text-green-400 text-xs md:text-sm'>Cancel Booking</button>
                                 </td>
                             </tr>)
                         }

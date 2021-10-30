@@ -13,19 +13,22 @@ const MyOrders = () => {
     }, [isDeleted])
     //  handle delete booking
     const handleDeleteBooking = id => {
-        fetch(`http://localhost:5000/delete/${id}`, {
-            method: 'DELETE',
-            headers: { 'content-type': 'application/json' }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    alert('Are you sure?')
-                    setIsDeleted(true)
-                } else {
-                    setIsDeleted(false)
-                }
+        const confirmation = window.confirm('Are you sure, you want to cancel booking?')
+        if (confirmation) {
+            fetch(`http://localhost:5000/delete/${id}`, {
+                method: 'DELETE',
+                headers: { 'content-type': 'application/json' }
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        setIsDeleted(true)
+                        alert('Successfully Deleted')
+                    } else {
+                        setIsDeleted(false)
+                    }
+                })
+        }
     }
     return (
         <div>
