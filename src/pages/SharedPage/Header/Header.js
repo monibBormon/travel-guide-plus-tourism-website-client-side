@@ -9,7 +9,7 @@ const Header = () => {
         <div>
             <div className="container mx-auto py-8 px-5 lg:px-0">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="logo text-center">
+                    <div className="logo text-center md:text-left">
                         <Link to='/'>
                             <h2 className='text-green-400 text-3xl font-medium'>Travel<span className='text-red-400'>Guide+</span></h2>
                         </Link>

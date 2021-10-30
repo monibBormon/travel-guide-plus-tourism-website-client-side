@@ -5,13 +5,13 @@ const ManageOrders = () => {
     const [isDeleted, setIsDeleted] = useState(null)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/manageOrders`)
+        fetch(`https://tranquil-eyrie-48733.herokuapp.com/manageOrders`)
             .then(res => res.json())
             .then(data => setTours(data))
     }, [isDeleted])
     // handle tour approve
     const handleTourApprove = id => {
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://tranquil-eyrie-48733.herokuapp.com/update/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' }
         })
@@ -26,7 +26,7 @@ const ManageOrders = () => {
     const handleDeleteBooking = id => {
         const confirmation = window.confirm('Are you sure, you want to cancel booking?')
         if (confirmation) {
-            fetch(`http://localhost:5000/delete/${id}`, {
+            fetch(`https://tranquil-eyrie-48733.herokuapp.com/delete/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             })

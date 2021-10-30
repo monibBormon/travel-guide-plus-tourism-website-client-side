@@ -10,7 +10,7 @@ const TourDetails = () => {
     const [tour, setTour] = useState({})
     const history = useHistory()
     useEffect(() => {
-        fetch(`http://localhost:5000/tourPlaces/${id}`)
+        fetch(`https://tranquil-eyrie-48733.herokuapp.com/tourPlaces/${id}`)
             .then(res => res.json())
             .then(data => setTour(data))
     }, [])
@@ -20,7 +20,7 @@ const TourDetails = () => {
     const bookingStatus = 'pending'
     const onSubmit = data => {
         data.status = bookingStatus
-        fetch(`http://localhost:5000/tourBooking`, {
+        fetch(`https://tranquil-eyrie-48733.herokuapp.com/tourBooking`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

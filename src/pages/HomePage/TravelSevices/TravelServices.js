@@ -5,7 +5,7 @@ const TravelServices = () => {
     const [tours, setTours] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/tourPlaces')
+        fetch('https://tranquil-eyrie-48733.herokuapp.com/tourPlaces')
             .then(res => res.json())
             .then(data => setTours(data))
     }, [])

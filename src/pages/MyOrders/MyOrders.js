@@ -7,7 +7,7 @@ const MyOrders = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user.email}`)
+        fetch(`https://tranquil-eyrie-48733.herokuapp.com/myOrders/${user.email}`)
             .then(res => res.json())
             .then(data => setTours(data))
     }, [isDeleted])
@@ -15,7 +15,7 @@ const MyOrders = () => {
     const handleDeleteBooking = id => {
         const confirmation = window.confirm('Are you sure, you want to cancel booking?')
         if (confirmation) {
-            fetch(`http://localhost:5000/delete/${id}`, {
+            fetch(`https://tranquil-eyrie-48733.herokuapp.com/delete/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             })
