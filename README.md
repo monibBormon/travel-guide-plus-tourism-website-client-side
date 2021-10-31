@@ -25,3 +25,6 @@ This is a travel service agency. We provide tour guide to make your journey frui
 * Firebase
 * React hook Form 
 * React Router Dom
+* Express Js
+* MonogoDb Database
+* Node Js
