@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const MyOrders = () => {
@@ -70,6 +71,11 @@ const MyOrders = () => {
                         }
                     </thead>
                 </table>
+                <div className='text-center'>
+                    <Link to='/tourPlaces'>
+                        <button className='px-10 border-2 py-3 mx-auto bg-green-500 text-white font-semibold text-2xl mt-10 mb-5'>Want to Book Another</button>
+                    </Link>
+                </div>
             </div>
         </div>
     );
