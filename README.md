@@ -6,7 +6,9 @@ Travel Guide+ - Refresh your mind with travelling with us.
 
 ### Project Description :
 
-This is a travel service agency. We provide tour guide to make your journey fruitful. We have many experience tour guide person to help you find the best enjoy of a place. 
+This is a travel service agency. We provide tour guide to make your journey fruitful. We have many experience tour guide person to help you find the best enjoy of a place.
+
+### This is a Full Stack Project Using Mern Stack.
 
 ### Website Features :
 
