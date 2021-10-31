@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from 'react-countup'
 
 
 const Counter = () => {
@@ -7,6 +8,7 @@ const Counter = () => {
             <div className="singleCounter text-center mb-5 px-4 py-10 shadow hover:shadow-lg">
                 <i className="text-5xl mb-5 text-green-400 fas fa-rocket"></i>
                 <div className="counter-meta">
+                    <CountUp end={200} duration={3} />
                     <h4 className='text-4xl font-semibold'>10</h4>
                     <h2 className='text-xl mt-2'>Travel Package</h2>
                 </div>

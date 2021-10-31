@@ -9,19 +9,20 @@ import TravelServices from '../TravelSevices/TravelServices';
 
 const Home = () => {
     const { isLoading } = useAuth()
-    if (isLoading) {
-        return <div>
-            <h2 className='text-4xl text-green-500 text-center font-medium pt-30'>Loading...</h2>
-        </div>
-    }
     return (
         <div>
-            <Hero></Hero>
-            <TravelServices></TravelServices>
-            <Expertise></Expertise>
-            <TourGuideTeam></TourGuideTeam>
-            <TourAbout></TourAbout>
-            <HomeCounter></HomeCounter>
+            {
+                isLoading ? <div>
+                    <h2 className='text-4xl text-green-500 text-center font-medium pt-30'>Loading...</h2>
+                </div> : <div>
+                    <Hero></Hero>
+                    <TravelServices></TravelServices>
+                    <Expertise></Expertise>
+                    <TourGuideTeam></TourGuideTeam>
+                    <TourAbout></TourAbout>
+                    <HomeCounter></HomeCounter>
+                </div>
+            }
         </div>
     );
 };
