@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SingleTravelService from '../../SharedPage/SingleTravelService/SingleTravelService';
 
 const TravelServices = () => {
     const [tours, setTours] = useState([])
@@ -18,21 +19,13 @@ const TravelServices = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {
-                        tours.map(tour => <div key={tour._id}>
-                            <div className="single-tour-box p-4 shadow-lg mb-5">
-                                <img style={{ height: '350px', width: '100%' }} src={tour.image} className='rounded' alt="..." />
-                                <div className="single-tour-text py-5">
-                                    <h4 className='font-semibold text-green-400 mb-3'><i className="far fa-calendar-alt mr-3 text-xl"></i>{tour.day} Days</h4>
-                                    <h2 className='md:text-2xl text-xl font-semibold mb-5'>{tour.title}</h2>
-                                    <p>{tour.description.slice(0, 110)}...</p>
-                                    <h4 className='my-2 font-semibold text-green-400 text-xl'>Package Price: ${tour.price}/per</h4>
-                                    <Link to={`/tourDetails/${tour._id}`}>
-                                        <button style={{ transition: '.3s all' }} className='font-medium capitalize border-2 bg-green-400 border-green-400 text-white hover:bg-white hover:text-green-400 py-2 px-8 rounded-full mt-3'>Book Tour <i class="fas fa-arrow-right"></i></button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>)
+                        tours.map(tour => <SingleTravelService key={tour._id} tour={tour}></SingleTravelService>)
                     }
+                </div>
+                <div className='text-center'>
+                    <Link to='/tourPlaces'>
+                        <button className='px-10 border-2 py-3 mx-auto bg-green-500 text-white font-semibold text-2xl mt-10 mb-5'>See All Travel Services</button>
+                    </Link>
                 </div>
             </div>
         </div>

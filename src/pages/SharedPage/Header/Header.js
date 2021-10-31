@@ -15,6 +15,9 @@ const Header = () => {
                         </Link>
                     </div>
                     <div className="menu-bar text-center lg:text-right mr-0 lg:mr-10 col-span-2">
+                        <NavLink activeClassName='active' style={{ transition: '.3s all' }} className='text-xl mr-5 border-b-2 border-transparent pb-1 hover:border-green-400' exact to='/'>
+                            Home
+                        </NavLink>
                         <NavLink activeClassName='active' style={{ transition: '.3s all' }} className='text-xl mr-5 border-b-2 border-transparent pb-1 hover:border-green-400' to='/myOrders'>
                             My Orders
                         </NavLink>

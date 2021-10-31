@@ -17,9 +17,9 @@ const Footer = () => {
                     <div className="footer-links">
                         <h2 className='text-green-400 text-3xl font-medium mb-3'>Important Links</h2>
                         <div className="links">
-                            <Link to='' className='block underline mb-2'>About Us</Link>
-                            <Link to='' className='block underline mb-2'>My Orders</Link>
-                            <Link to='' className='block underline mb-2'>Tours Packages</Link>
+                            <Link to='/about' className='block underline mb-2'>About Us</Link>
+                            <Link to='myOrders' className='block underline mb-2'>My Orders</Link>
+                            <Link to='tourPlaces' className='block underline mb-2'>Tours Packages</Link>
                         </div>
                     </div>
                     <div className="footer-contact">

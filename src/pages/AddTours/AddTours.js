@@ -1,7 +1,9 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router';
 
 const AddTours = () => {
+    const history = useHistory()
     // book confirmation
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -14,6 +16,7 @@ const AddTours = () => {
             .then(data => {
                 if (data.insertedId) {
                     alert('Successfully added the tourist place.')
+                    history.push('/tourPlaces')
                     reset()
                 }
             })
