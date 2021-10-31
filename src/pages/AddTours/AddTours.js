@@ -11,7 +11,12 @@ const AddTours = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.insertedId) {
+                    alert('Successfully added the tourist place.')
+                    reset()
+                }
+            })
     }
     return (
         <div>

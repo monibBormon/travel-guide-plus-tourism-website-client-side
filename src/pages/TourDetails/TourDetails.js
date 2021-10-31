@@ -45,7 +45,7 @@ const TourDetails = () => {
                         <p>{tour.description}</p>
                         <h4 className='my-2 font-semibold text-green-400 text-2xl'>Package Price: ${tour.price}/per</h4>
                         <HashLink to='/#tours'>
-                            <button className='bg-green-400 text-white px-6 py-2 font-semibold mt-5'>Back to More Tours</button>
+                            <button className='bg-green-400 text-white px-6 py-2 font-semibold mt-5'>Explore More Tours</button>
                         </HashLink>
                     </div>
                     <div className="tour-confirmation-form">
